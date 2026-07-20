@@ -57,6 +57,13 @@ function iniciar() {
 
     document.getElementById('msgResultado').innerText = ''
 
+    let opcoes = document.getElementsByName('defesa')
+
+    opcoes[0].checked = false
+    opcoes[1].checked = false
+    opcoes[2].checked = false
+    opcoes[3].checked = false
+
 }
 
 function responder() {
