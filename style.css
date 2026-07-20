@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+
+
+body {
+    background-color: #d9d9d9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    color: #b30000;
+}
+
+header p {
+    color: #333333;
+}
+
+
+
+section#principal {
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+#golpe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#txtGolpe {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#imgGolpe {
+    width: 250px;
+    height: 250px;
+    border: 2px solid #b30000;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+#txtDefesa {
+    visibility: hidden;
+}
+
+#imgDefesa {
+    visibility: hidden;
+}
+
+
+
+#defesas {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#defesas p {
+    font-weight: bold;
+}
+
+
+
+#areaBotoes {
+    text-align: center;
+    margin-top: 25px;
+}
+
+input[type=button] {
+    background-color: #b30000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type=button]:hover {
+    background-color: #d60000;
+}
+
+
+
+#resultado {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#msgResultado {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    color: #555555;
+}

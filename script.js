@@ -45,6 +45,10 @@ function iniciar() {
 
     indiceGolpe = Math.floor(Math.random() * golpes.length)
 
+    document.getElementById('txtDefesa').style.visibility = 'hidden'
+
+    document.getElementById('imgDefesa').style.visibility = 'hidden'
+
     document.getElementById('txtGolpe').innerText =
         golpes[indiceGolpe].nome
 
@@ -52,6 +56,13 @@ function iniciar() {
         golpes[indiceGolpe].imagemGolpe
 
     document.getElementById('msgResultado').innerText = ''
+
+    let opcoes = document.getElementsByName('defesa')
+
+    opcoes[0].checked = false
+    opcoes[1].checked = false
+    opcoes[2].checked = false
+    opcoes[3].checked = false
 
 }
 
@@ -76,21 +87,53 @@ function responder() {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
+        
+        document.getElementById('imgDefesa').src =
+        golpes[indiceGolpe].imagemDefesa
+
+        document.getElementById('imgDefesa').style.visibility =
+        'visible'
+
+        document.getElementById('txtDefesa').style.visibility = 'visible'
 
     } else if (golpe === 'Jab' && defesa === 'Bloqueio Alto') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
 
+        document.getElementById('imgDefesa').src =
+        golpes[indiceGolpe].imagemDefesa
+
+        document.getElementById('imgDefesa').style.visibility =
+        'visible'
+
+        document.getElementById('txtDefesa').style.visibility = 'visible'
+
     } else if (golpe === 'Direto' && defesa === 'Esquiva') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
+        
+        document.getElementById('imgDefesa').src =
+        golpes[indiceGolpe].imagemDefesa
+
+        document.getElementById('imgDefesa').style.visibility =
+        'visible'
+
+        document.getElementById('txtDefesa').style.visibility = 'visible'
 
     } else if (golpe === 'Teep' && defesa === 'Desvio Lateral') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
+
+        document.getElementById('imgDefesa').src =
+        golpes[indiceGolpe].imagemDefesa
+
+        document.getElementById('imgDefesa').style.visibility =
+        'visible'
+
+        document.getElementById('txtDefesa').style.visibility = 'visible'
 
     } else {
 
