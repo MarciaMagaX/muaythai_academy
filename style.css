@@ -1,13 +1,13 @@
 @charset "UTF-8";
 
-/* Configuração geral da página */
+
 
 body {
     background-color: #d9d9d9;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Título */
+
 
 header {
     text-align: center;
@@ -21,7 +21,7 @@ header p {
     color: #333333;
 }
 
-/* Área principal */
+
 
 section#principal {
     background-color: white;
@@ -32,10 +32,12 @@ section#principal {
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Área do golpe */
+
 
 #golpe {
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 #txtGolpe {
@@ -51,7 +53,15 @@ section#principal {
     margin-top: 10px;
 }
 
-/* Área das defesas */
+#txtDefesa {
+    visibility: hidden;
+}
+
+#imgDefesa {
+    visibility: hidden;
+}
+
+
 
 #defesas {
     margin-top: 20px;
@@ -62,7 +72,7 @@ section#principal {
     font-weight: bold;
 }
 
-/* Botões */
+
 
 #areaBotoes {
     text-align: center;
@@ -84,7 +94,7 @@ input[type=button]:hover {
     background-color: #d60000;
 }
 
-/* Resultado */
+
 
 #resultado {
     margin-top: 20px;
@@ -96,7 +106,7 @@ input[type=button]:hover {
     font-weight: bold;
 }
 
-/* Rodapé */
+
 
 footer {
     text-align: center;
