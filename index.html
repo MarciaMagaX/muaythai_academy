@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muay Thai Academy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Muay Thai Academy</h1>
+        <p>Escolha a defesa correta para cada golpe.</p>
+    </header>
+
+    <section id="principal">
+
+        <div id="golpe">
+
+            <p id="txtGolpe">
+                Clique em Iniciar
+            </p>
+
+            <img
+                id="imgGolpe"
+                src="imagens/logo.png"
+                alt="Imagem do golpe">
+
+        </div>
+
+       <div id="defesas">
+
+    <p>Qual é a melhor defesa?</p>
+
+    <input type="radio" name="defesa" value="Check"> Check<br>
+
+    <input type="radio" name="defesa" value="Bloqueio Alto"> Bloqueio Alto<br>
+
+    <input type="radio" name="defesa" value="Esquiva"> Esquiva<br>
+
+    <input type="radio" name="defesa" value="Desvio Lateral"> Desvio Lateral
+
+    </div>
+
+        <div id="areaBotoes">
+
+            <input
+                type="button"
+                value="Iniciar"
+                id="btnIniciar"
+                onclick="iniciar()">
+
+            <input
+                type="button"
+                value="Responder"
+                id="btnResponder"
+                onclick="responder()">
+
+        </div>
+
+        <div id="resultado">
+
+            <p id="msgResultado"></p>
+
+        </div>
+
+    </section>
+
+    <footer>
+
+        <p>&copy; 2026 - Desenvolvido por Marcia Xavier</p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
