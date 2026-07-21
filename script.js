@@ -34,14 +34,14 @@ let indiceGolpe
 
 function mostrarDefesa() {
 
+    document.getElementById('defesaCorreta').style.display = 'block'
+
     document.getElementById('imgDefesa').src =
         golpes[indiceGolpe].imagemDefesa
 
-    document.getElementById('imgDefesa').style.visibility =
-        'visible'
+    document.getElementById('txtGolpe').onclick = iniciar
 
-    document.getElementById('txtDefesa').style.visibility =
-        'visible'
+    document.getElementById('imgGolpe').onclick = iniciar
 
 }
 
@@ -49,19 +49,31 @@ function iniciar() {
 
     indiceGolpe = Math.floor(Math.random() * golpes.length)
 
+    document.getElementById('txtGolpe').onclick = null
+
+    document.getElementById('imgGolpe').onclick = null
+
     document.getElementById('txtGolpe').innerText =
         golpes[indiceGolpe].nome
 
     document.getElementById('imgGolpe').src =
         golpes[indiceGolpe].imagemGolpe
 
-    document.getElementById('txtDefesa').style.visibility =
-        'hidden'
-
-    document.getElementById('imgDefesa').style.visibility =
-        'hidden'
-
     document.getElementById('msgResultado').innerText = ''
+
+    document.getElementById('defesaCorreta').style.display = 'none'
+
+    document.getElementById('resultado').style.display = 'none'
+
+    document.getElementById('defesas').style.display = 'block'
+
+    document.getElementById('areaBotoes').style.display = 'block'
+
+    document.getElementById('btnResponder').style.display = 'block'
+
+    document.getElementById('btnTentarNovamente').style.display = 'none'
+
+    document.getElementById('btnProximo').style.display = 'none'
 
     let opcoes = document.getElementsByName('defesa')
 
@@ -70,11 +82,26 @@ function iniciar() {
     opcoes[2].checked = false
     opcoes[3].checked = false
 
-    document.getElementById('btnIniciar').style.display =
-        'none'
+}
 
-    document.getElementById('btnResponder').style.display =
-        'block'
+function repetirGolpe() {
+
+    document.getElementById('msgResultado').innerText = ''
+
+    document.getElementById('resultado').style.display = 'none'
+
+    document.getElementById('defesas').style.display = 'block'
+
+    document.getElementById('btnResponder').style.display = 'block'
+
+    document.getElementById('btnTentarNovamente').style.display = 'none'
+
+    let opcoes = document.getElementsByName('defesa')
+
+    opcoes[0].checked = false
+    opcoes[1].checked = false
+    opcoes[2].checked = false
+    opcoes[3].checked = false
 
 }
 
@@ -102,7 +129,24 @@ function responder() {
 
     }
 
+    if (defesa == undefined) {
+
+        document.getElementById('resultado').style.display = 'block'
+
+        document.getElementById('msgResultado').innerText =
+            '⚠️ Selecione uma defesa.'
+
+        return
+
+    }
+
     let golpe = document.getElementById('txtGolpe').innerText
+
+    document.getElementById('resultado').style.display = 'block'
+
+    document.getElementById('defesas').style.display = 'none'
+
+    document.getElementById('btnResponder').style.display = 'none'
 
     if (golpe === 'Low Kick' && defesa === 'Check') {
 
@@ -111,12 +155,18 @@ function responder() {
 
         mostrarDefesa()
 
+        document.getElementById('btnProximo').style.display =
+            'block'
+
     } else if (golpe === 'Jab' && defesa === 'Bloqueio Alto') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
 
         mostrarDefesa()
+
+        document.getElementById('btnProximo').style.display =
+            'block'
 
     } else if (golpe === 'Direto' && defesa === 'Esquiva') {
 
@@ -125,6 +175,9 @@ function responder() {
 
         mostrarDefesa()
 
+        document.getElementById('btnProximo').style.display =
+            'block'
+
     } else if (golpe === 'Teep' && defesa === 'Desvio Lateral') {
 
         document.getElementById('msgResultado').innerText =
@@ -132,20 +185,17 @@ function responder() {
 
         mostrarDefesa()
 
+        document.getElementById('btnProximo').style.display =
+            'block'
+
     } else {
 
         document.getElementById('msgResultado').innerText =
-            '❌ Errou! Tente novamente.'
+            '❌ Errou!'
+
+        document.getElementById('btnTentarNovamente').style.display =
+            'block'
 
     }
-
-    document.getElementById('btnResponder').style.display =
-        'none'
-
-    document.getElementById('btnIniciar').style.display =
-        'block'
-
-    document.getElementById('btnIniciar').value =
-        'Próximo golpe'
 
 }
