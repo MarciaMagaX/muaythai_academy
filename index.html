@@ -2,67 +2,92 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muay Thai Academy</title>
+
+    <title>Muay Thai Quiz</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="icon" type="image/png" href="imagens/lutadorMT.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
     <header>
-        <h1>Muay Thai Academy</h1>
+
+        <h1>🥊 Muay Thai Quiz</h1>
+
         <p>Escolha a defesa correta para cada golpe.</p>
+
     </header>
 
     <section id="principal">
 
         <div id="golpe">
 
-    <div id="ataque">
+            <div id="ataque">
 
-        <p id="txtGolpe">
-            Clique em Iniciar
-        </p>
+                <h2 id="txtGolpe">
+                    Clique em Iniciar
+                </h2>
 
-        <img
-            id="imgGolpe"
-            src="imagens/logo.png"
-            alt="Imagem do golpe">
+                <img
+                    id="imgGolpe"
+                    src="imagens/logo.png"
+                    alt="Imagem do golpe">
 
-    </div>
+            </div>
 
-    <div id="defesaCorreta">
+            <div id="defesaCorreta">
 
-        <p id="txtDefesa">Defesa</p>
+                <p id="txtDefesa">
+                    Defesa Correta
+                </p>
 
-        <img
-            id="imgDefesa"
-            src="imagens/logo.png"
-            alt="Imagem da defesa">
+                <img
+                    id="imgDefesa"
+                    src="imagens/logo.png"
+                    alt="Imagem da defesa">
 
-    </div>
+            </div>
 
-</div>
+        </div>
 
-       <div id="defesas">
+        <div id="defesas">
 
-    <p>Qual é a melhor defesa?</p>
+            <p>Qual é a melhor defesa?</p>
 
-    <input type="radio" name="defesa" value="Check"> Check<br>
+            <label>
+                <input type="radio" name="defesa" value="Check">
+                Check
+            </label>
 
-    <input type="radio" name="defesa" value="Bloqueio Alto"> Bloqueio Alto<br>
+            <label>
+                <input type="radio" name="defesa" value="Bloqueio Alto">
+                Bloqueio Alto
+            </label>
 
-    <input type="radio" name="defesa" value="Esquiva"> Esquiva<br>
+            <label>
+                <input type="radio" name="defesa" value="Esquiva">
+                Esquiva
+            </label>
 
-    <input type="radio" name="defesa" value="Desvio Lateral"> Desvio Lateral
+            <label>
+                <input type="radio" name="defesa" value="Desvio Lateral">
+                Desvio Lateral
+            </label>
 
-    </div>
+        </div>
+
+        <div id="resultado">
+
+            <p id="msgResultado"></p>
+
+        </div>
 
         <div id="areaBotoes">
 
@@ -77,12 +102,6 @@
                 value="Responder"
                 id="btnResponder"
                 onclick="responder()">
-
-        </div>
-
-        <div id="resultado">
-
-            <p id="msgResultado"></p>
 
         </div>
 
