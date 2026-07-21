@@ -17,103 +17,112 @@
 
 <body>
 
-    <header>
+<header>
 
-        <h1>🥊 Muay Thai Quiz</h1>
+    <h1>🥊 Muay Thai Quiz</h1>
 
-        <p>Escolha a defesa correta para cada golpe.</p>
+    <p>Aprenda a defesa correta para cada golpe.</p>
 
-    </header>
+</header>
 
-    <section id="principal">
+<section id="principal">
 
-        <div id="golpe">
+    <div id="golpe">
 
-            <div id="ataque">
+        <div id="ataque">
 
-                <h2 id="txtGolpe">
-                    Clique em Iniciar
-                </h2>
+            <h2 id="txtGolpe" onclick="iniciar()">
+                Clique para iniciar
+            </h2>
 
-                <img
-                    id="imgGolpe"
-                    src="imagens/logo.png"
-                    alt="Imagem do golpe">
-
-            </div>
-
-            <div id="defesaCorreta">
-
-                <p id="txtDefesa">
-                    Defesa Correta
-                </p>
-
-                <img
-                    id="imgDefesa"
-                    src="imagens/logo.png"
-                    alt="Imagem da defesa">
-
-            </div>
-
-        </div>
-
-        <div id="defesas">
-
-            <p>Qual é a melhor defesa?</p>
-
-            <label>
-                <input type="radio" name="defesa" value="Check">
-                Check
-            </label>
-
-            <label>
-                <input type="radio" name="defesa" value="Bloqueio Alto">
-                Bloqueio Alto
-            </label>
-
-            <label>
-                <input type="radio" name="defesa" value="Esquiva">
-                Esquiva
-            </label>
-
-            <label>
-                <input type="radio" name="defesa" value="Desvio Lateral">
-                Desvio Lateral
-            </label>
-
-        </div>
-
-        <div id="resultado">
-
-            <p id="msgResultado"></p>
-
-        </div>
-
-        <div id="areaBotoes">
-
-            <input
-                type="button"
-                value="Iniciar"
-                id="btnIniciar"
+            <img
+                id="imgGolpe"
+                src="imagens/logo.png"
+                alt="Logo do Muay Thai Quiz"
                 onclick="iniciar()">
 
-            <input
-                type="button"
-                value="Responder"
-                id="btnResponder"
-                onclick="responder()">
+        </div>
+
+        <div id="defesaCorreta">
+
+            <p id="txtDefesa">
+                Defesa Correta
+            </p>
+
+            <img
+                id="imgDefesa"
+                src="imagens/logo.png"
+                alt="Imagem da defesa">
 
         </div>
 
-    </section>
+    </div>
 
-    <footer>
+    <div id="defesas">
 
-        <p>&copy; 2026 - Desenvolvido por Marcia Xavier</p>
+        <p id="pergunta">
+            Qual é a melhor defesa?
+        </p>
 
-    </footer>
+        <label>
+            <input type="radio" name="defesa" value="Check">
+            Check
+        </label>
 
-    <script src="script.js"></script>
+        <label>
+            <input type="radio" name="defesa" value="Bloqueio Alto">
+            Bloqueio Alto
+        </label>
+
+        <label>
+            <input type="radio" name="defesa" value="Esquiva">
+            Esquiva
+        </label>
+
+        <label>
+            <input type="radio" name="defesa" value="Desvio Lateral">
+            Desvio Lateral
+        </label>
+
+    </div>
+
+    <div id="resultado">
+
+        <p id="msgResultado"></p>
+
+    </div>
+
+    <div id="areaBotoes">
+
+        <input
+            type="button"
+            id="btnResponder"
+            value="Responder"
+            onclick="responder()">
+
+        <input
+            type="button"
+            id="btnTentarNovamente"
+            value="Tente novamente"
+            onclick="repetirGolpe()">
+
+        <input
+            type="button"
+            id="btnProximo"
+            value="Próximo golpe"
+            onclick="iniciar()">
+
+    </div>
+
+</section>
+
+<footer>
+
+    <p>&copy; 2026 - Desenvolvido por Marcia Xavier</p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 
