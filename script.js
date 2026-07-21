@@ -30,30 +30,36 @@ let golpes = [
 
 ]
 
-let defesas = [
-
-    'Check',
-    'Bloqueio Alto',
-    'Esquiva',
-    'Desvio Lateral'
-
-]
-
 let indiceGolpe
+
+function mostrarDefesa() {
+
+    document.getElementById('imgDefesa').src =
+        golpes[indiceGolpe].imagemDefesa
+
+    document.getElementById('imgDefesa').style.visibility =
+        'visible'
+
+    document.getElementById('txtDefesa').style.visibility =
+        'visible'
+
+}
 
 function iniciar() {
 
     indiceGolpe = Math.floor(Math.random() * golpes.length)
-
-    document.getElementById('txtDefesa').style.visibility = 'hidden'
-
-    document.getElementById('imgDefesa').style.visibility = 'hidden'
 
     document.getElementById('txtGolpe').innerText =
         golpes[indiceGolpe].nome
 
     document.getElementById('imgGolpe').src =
         golpes[indiceGolpe].imagemGolpe
+
+    document.getElementById('txtDefesa').style.visibility =
+        'hidden'
+
+    document.getElementById('imgDefesa').style.visibility =
+        'hidden'
 
     document.getElementById('msgResultado').innerText = ''
 
@@ -64,21 +70,36 @@ function iniciar() {
     opcoes[2].checked = false
     opcoes[3].checked = false
 
+    document.getElementById('btnIniciar').style.display =
+        'none'
+
+    document.getElementById('btnResponder').style.display =
+        'block'
+
 }
 
 function responder() {
 
     let opcoes = document.getElementsByName('defesa')
+
     let defesa
 
     if (opcoes[0].checked) {
+
         defesa = opcoes[0].value
+
     } else if (opcoes[1].checked) {
+
         defesa = opcoes[1].value
+
     } else if (opcoes[2].checked) {
+
         defesa = opcoes[2].value
+
     } else if (opcoes[3].checked) {
+
         defesa = opcoes[3].value
+
     }
 
     let golpe = document.getElementById('txtGolpe').innerText
@@ -87,53 +108,29 @@ function responder() {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
-        
-        document.getElementById('imgDefesa').src =
-        golpes[indiceGolpe].imagemDefesa
 
-        document.getElementById('imgDefesa').style.visibility =
-        'visible'
-
-        document.getElementById('txtDefesa').style.visibility = 'visible'
+        mostrarDefesa()
 
     } else if (golpe === 'Jab' && defesa === 'Bloqueio Alto') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
 
-        document.getElementById('imgDefesa').src =
-        golpes[indiceGolpe].imagemDefesa
-
-        document.getElementById('imgDefesa').style.visibility =
-        'visible'
-
-        document.getElementById('txtDefesa').style.visibility = 'visible'
+        mostrarDefesa()
 
     } else if (golpe === 'Direto' && defesa === 'Esquiva') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
-        
-        document.getElementById('imgDefesa').src =
-        golpes[indiceGolpe].imagemDefesa
 
-        document.getElementById('imgDefesa').style.visibility =
-        'visible'
-
-        document.getElementById('txtDefesa').style.visibility = 'visible'
+        mostrarDefesa()
 
     } else if (golpe === 'Teep' && defesa === 'Desvio Lateral') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
 
-        document.getElementById('imgDefesa').src =
-        golpes[indiceGolpe].imagemDefesa
-
-        document.getElementById('imgDefesa').style.visibility =
-        'visible'
-
-        document.getElementById('txtDefesa').style.visibility = 'visible'
+        mostrarDefesa()
 
     } else {
 
@@ -141,5 +138,14 @@ function responder() {
             '❌ Errou! Tente novamente.'
 
     }
+
+    document.getElementById('btnResponder').style.display =
+        'none'
+
+    document.getElementById('btnIniciar').style.display =
+        'block'
+
+    document.getElementById('btnIniciar').value =
+        'Próximo golpe'
 
 }

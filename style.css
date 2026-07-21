@@ -4,11 +4,16 @@
    GERAL
 ========================== */
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #d9d9d9;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 20px;
+    padding: 15px;
 }
 
 
@@ -18,14 +23,16 @@ body {
 
 header {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 header h1 {
     color: #b30000;
+    margin-bottom: 8px;
 }
 
 header p {
-    color: #333333;
+    color: #444;
 }
 
 
@@ -33,48 +40,63 @@ header p {
    ÁREA PRINCIPAL
 ========================== */
 
-section#principal {
-    background-color: white;
-    width: 90%;
+#principal {
+    background: white;
+    width: 100%;
     max-width: 500px;
     margin: auto;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,.25);
 }
 
 
 /* ==========================
-   GOLPE E DEFESA
+   GOLPE
 ========================== */
 
 #golpe {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 20px;
-}
-
-#ataque,
-#defesaCorreta {
     text-align: center;
 }
 
-#txtGolpe,
+#txtGolpe {
+    font-size: 28px;
+    color: #b30000;
+    margin-bottom: 15px;
+}
+
+#imgGolpe {
+    width: 220px;
+    max-width: 100%;
+    border: 2px solid #b30000;
+    border-radius: 10px;
+}
+
+
+/* ==========================
+   DEFESA CORRETA
+========================== */
+
+#defesaCorreta {
+    text-align: center;
+    margin-top: 20px;
+}
+
 #txtDefesa {
     font-size: 20px;
     font-weight: bold;
+    margin-bottom: 10px;
 }
 
-#imgGolpe,
 #imgDefesa {
-    width: 100%;
-    max-width: 250px;
-    height: auto;
-    border: 2px solid #b30000;
+    width: 220px;
+    max-width: 100%;
+    border: 2px solid #198754;
     border-radius: 10px;
-    margin-top: 10px;
 }
+
+
+/* Escondidos no início */
 
 #txtDefesa,
 #imgDefesa {
@@ -83,16 +105,37 @@ section#principal {
 
 
 /* ==========================
-   OPÇÕES DE DEFESA
+   OPÇÕES
 ========================== */
 
 #defesas {
-    margin-top: 20px;
-    font-size: 18px;
+    margin-top: 25px;
 }
 
 #defesas p {
+    text-align: center;
     font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+#defesas label {
+    display: block;
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+#defesas label:hover {
+    background: #eeeeee;
+}
+
+#defesas input[type=radio] {
+    margin-right: 10px;
 }
 
 
@@ -101,24 +144,29 @@ section#principal {
 ========================== */
 
 #areaBotoes {
-    text-align: center;
     margin-top: 25px;
 }
 
 input[type=button] {
-    background-color: #b30000;
+    width: 100%;
+    background: #b30000;
     color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 6px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 18px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: .2s;
 }
 
 input[type=button]:hover {
-    background-color: #d60000;
+    background: #d60000;
+}
+
+/* Responder começa escondido */
+
+#btnResponder {
+    display: none;
 }
 
 
@@ -127,12 +175,13 @@ input[type=button]:hover {
 ========================== */
 
 #resultado {
-    margin-top: 20px;
     text-align: center;
+    margin-top: 20px;
+    min-height: 35px;
 }
 
 #msgResultado {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -144,7 +193,7 @@ input[type=button]:hover {
 footer {
     text-align: center;
     margin-top: 20px;
-    color: #555555;
+    color: #666;
 }
 
 
@@ -158,36 +207,30 @@ footer {
         padding: 10px;
     }
 
-    section#principal {
-        width: 95%;
+    #principal {
         padding: 15px;
     }
 
-    #golpe {
-        flex-direction: column;
-        gap: 30px;
+    #txtGolpe {
+        font-size: 24px;
     }
 
     #imgGolpe,
     #imgDefesa {
-        max-width: 200px;
+        width: 180px;
     }
 
-    #txtGolpe,
-    #txtDefesa {
+    #defesas p {
         font-size: 18px;
     }
 
-    #defesas {
-        font-size: 16px;
+    #defesas label {
+        font-size: 17px;
+        padding: 14px;
     }
 
     input[type=button] {
-        width: 100%;
-        margin: 8px 0;
+        font-size: 18px;
     }
 
-    footer {
-        font-size: 14px;
-    }
 }
