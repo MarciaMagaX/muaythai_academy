@@ -39,11 +39,19 @@ function mostrarDefesa() {
     document.getElementById('imgDefesa').src =
         golpes[indiceGolpe].imagemDefesa
 
+    document.getElementById('txtGolpe').onclick = iniciar
+
+    document.getElementById('imgGolpe').onclick = iniciar
+
 }
 
 function iniciar() {
 
     indiceGolpe = Math.floor(Math.random() * golpes.length)
+
+    document.getElementById('txtGolpe').onclick = null
+
+    document.getElementById('imgGolpe').onclick = null
 
     document.getElementById('txtGolpe').innerText =
         golpes[indiceGolpe].nome
