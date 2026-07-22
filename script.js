@@ -3,29 +3,29 @@ let golpes = [
     {
         nome: 'Low Kick',
         imagemGolpe: 'imagens/lowkick.png',
-        defesa: 'Check',
-        imagemDefesa: 'imagens/check.png'
+        defesa: 'Bloqueio',
+        imagemDefesa: 'imagens/bloqueio1.png'
     },
 
     {
         nome: 'Jab',
         imagemGolpe: 'imagens/jab.png',
-        defesa: 'Bloqueio Alto',
-        imagemDefesa: 'imagens/bloqueioalto.png'
+        defesa: 'Guarda Escudo',
+        imagemDefesa: 'imagens/guardaescudo.png'
     },
 
     {
         nome: 'Direto',
         imagemGolpe: 'imagens/direto.png',
         defesa: 'Esquiva',
-        imagemDefesa: 'imagens/esquiva.png'
+        imagemDefesa: 'imagens/esquiva1.png'
     },
 
     {
         nome: 'Teep',
         imagemGolpe: 'imagens/teep.png',
-        defesa: 'Desvio Lateral',
-        imagemDefesa: 'imagens/desviolateral.png'
+        defesa: 'Limpar com uma das mãos',
+        imagemDefesa: 'imagens/limparcomumamao.png'
     }
 
 ]
@@ -38,10 +38,6 @@ function mostrarDefesa() {
 
     document.getElementById('imgDefesa').src =
         golpes[indiceGolpe].imagemDefesa
-
-    document.getElementById('txtGolpe').onclick = iniciar
-
-    document.getElementById('imgGolpe').onclick = iniciar
 
 }
 
@@ -96,6 +92,8 @@ function repetirGolpe() {
 
     document.getElementById('btnTentarNovamente').style.display = 'none'
 
+    document.getElementById('btnProximo').style.display = 'none'
+
     let opcoes = document.getElementsByName('defesa')
 
     opcoes[0].checked = false
@@ -148,7 +146,7 @@ function responder() {
 
     document.getElementById('btnResponder').style.display = 'none'
 
-    if (golpe === 'Low Kick' && defesa === 'Check') {
+    if (golpe === 'Low Kick' && defesa === 'Bloqueio') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
@@ -158,7 +156,7 @@ function responder() {
         document.getElementById('btnProximo').style.display =
             'block'
 
-    } else if (golpe === 'Jab' && defesa === 'Bloqueio Alto') {
+    } else if (golpe === 'Jab' && defesa === 'Guarda Escudo') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
@@ -178,7 +176,7 @@ function responder() {
         document.getElementById('btnProximo').style.display =
             'block'
 
-    } else if (golpe === 'Teep' && defesa === 'Desvio Lateral') {
+    } else if (golpe === 'Teep' && defesa === 'Limpar com uma das mãos') {
 
         document.getElementById('msgResultado').innerText =
             '✅ Você acertou!'
