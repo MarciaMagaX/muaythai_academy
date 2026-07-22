@@ -30,11 +30,12 @@ let golpes = [
 
 ]
 
-let indiceGolpe
-
 function mostrarDefesa() {
 
     document.getElementById('defesaCorreta').style.display = 'block'
+
+    document.getElementById('txtDefesa').innerText =
+        golpes[indiceGolpe].defesa
 
     document.getElementById('imgDefesa').src =
         golpes[indiceGolpe].imagemDefesa
